@@ -22,7 +22,7 @@ Scripts so anyone (no technical skills needed) can run n8n for free on their com
 
 1. Crea una cuenta en <https://dashboard.ngrok.com/signup>.
 2. Copia tu **authtoken**: <https://dashboard.ngrok.com/get-started/your-authtoken>.
-3. Crea tu **dominio gratis** (uno por cuenta, no cambia nunca): <https://dashboard.ngrok.com/domains> → botón "New Domain". Te da algo como `tu-nombre.ngrok-free.app`.
+3. Copia tu **dominio gratis**: <https://dashboard.ngrok.com/domains>. ngrok ya le asignó a tu cuenta un "dev domain" (algo como `nombre-raro-setenta.ngrok-free.dev`) — no necesitas crear nada, solo copiarlo con el ícono de copiar. Es uno por cuenta y no cambia nunca.
 
 Ten a mano el authtoken y el dominio: el script te los pedirá la primera vez y los guardará en `n8n-config.txt` (junto al script).
 
@@ -36,7 +36,7 @@ La primera vez pide el authtoken y el dominio de ngrok, y descarga n8n (unos min
 
 ### Webhooks (por ejemplo, desde Lovable)
 
-Los webhooks que copies del editor de n8n ya salen con tu dominio público (`https://tu-dominio.ngrok-free.app/webhook/...`): pégalos directo en Lovable u otro servicio. El dominio no cambia entre reinicios.
+Los webhooks que copies del editor de n8n ya salen con tu dominio público (`https://tu-dominio.ngrok-free.dev/webhook/...`): pégalos directo en Lovable u otro servicio. El dominio no cambia entre reinicios.
 
 Tres cosas importantes:
 
@@ -57,7 +57,7 @@ Tres cosas importantes:
 | "El túnel no arrancó (authtoken o dominio incorrectos)" | Borra el archivo `n8n-config.txt` que está junto al script y vuelve a ejecutar `start-n8n` con los datos correctos. |
 | El navegador muestra error al abrir | Espera 30 segundos y recarga la página; la primera vez tarda más. |
 | n8n no carga después de reiniciar la compu | Doble clic en `start-n8n` otra vez. |
-| Un webhook no responde desde afuera | Verifica que la compu esté encendida, n8n corriendo, y que la URL empiece con `https://tu-dominio.ngrok-free.app`. Si lo llamas desde código frontend, agrega el header `ngrok-skip-browser-warning`. |
+| Un webhook no responde desde afuera | Verifica que la compu esté encendida, n8n corriendo, y que la URL empiece con `https://tu-dominio.ngrok-free.dev`. Si lo llamas desde código frontend, agrega el header `ngrok-skip-browser-warning`. |
 
 ---
 
@@ -75,7 +75,7 @@ Tres cosas importantes:
 
 1. Create an account at <https://dashboard.ngrok.com/signup>.
 2. Copy your **authtoken**: <https://dashboard.ngrok.com/get-started/your-authtoken>.
-3. Claim your **free domain** (one per account, never changes): <https://dashboard.ngrok.com/domains> → "New Domain" button. You get something like `your-name.ngrok-free.app`.
+3. Copy your **free domain**: <https://dashboard.ngrok.com/domains>. ngrok already assigned your account a "dev domain" (something like `odd-name-seventy.ngrok-free.dev`) — no need to create anything, just copy it with the copy icon. It's one per account and never changes.
 
 Keep the authtoken and domain handy: the script asks for them on first run and saves them to `n8n-config.txt` (next to the script).
 
@@ -89,7 +89,7 @@ The first run asks for your ngrok authtoken and domain, then downloads n8n (a fe
 
 ### Webhooks (e.g. from Lovable)
 
-Webhook URLs you copy from the n8n editor already use your public domain (`https://your-domain.ngrok-free.app/webhook/...`): paste them straight into Lovable or any other service. The domain stays the same across restarts.
+Webhook URLs you copy from the n8n editor already use your public domain (`https://your-domain.ngrok-free.dev/webhook/...`): paste them straight into Lovable or any other service. The domain stays the same across restarts.
 
 Three important notes:
 
@@ -110,4 +110,4 @@ Three important notes:
 | "The tunnel did not start (wrong authtoken or domain)" | Delete the `n8n-config.txt` file next to the script and run `start-n8n` again with the correct values. |
 | Browser shows an error on open | Wait 30 seconds and reload; the first run takes longer. |
 | n8n won't load after rebooting | Double-click `start-n8n` again. |
-| A webhook doesn't respond from outside | Check the computer is on, n8n is running, and the URL starts with `https://your-domain.ngrok-free.app`. If calling from frontend code, add the `ngrok-skip-browser-warning` header. |
+| A webhook doesn't respond from outside | Check the computer is on, n8n is running, and the URL starts with `https://your-domain.ngrok-free.dev`. If calling from frontend code, add the `ngrok-skip-browser-warning` header. |

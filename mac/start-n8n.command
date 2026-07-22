@@ -21,10 +21,10 @@ if [ ! -f "$CONFIG" ]; then
     echo ""
     echo "  1) https://dashboard.ngrok.com/signup  (cuenta gratis / free account)"
     echo "  2) https://dashboard.ngrok.com/get-started/your-authtoken  (copia tu authtoken / copy your authtoken)"
-    echo "  3) https://dashboard.ngrok.com/domains  (crea tu dominio gratis / claim your free domain)"
+    echo "  3) https://dashboard.ngrok.com/domains  (copia tu dev domain ya asignado / copy your pre-assigned dev domain)"
     echo ""
     read -r -p "ngrok authtoken: " NGROK_AUTHTOKEN
-    read -r -p "ngrok domain (ej/e.g. algo.ngrok-free.app): " NGROK_DOMAIN
+    read -r -p "ngrok domain (ej/e.g. algo.ngrok-free.dev): " NGROK_DOMAIN
     printf 'NGROK_AUTHTOKEN=%s\nNGROK_DOMAIN=%s\n' "$NGROK_AUTHTOKEN" "$NGROK_DOMAIN" > "$CONFIG"
 fi
 

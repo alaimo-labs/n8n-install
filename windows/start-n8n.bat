@@ -23,10 +23,10 @@ echo [EN] Initial setup (first time only).
 echo.
 echo   1) https://dashboard.ngrok.com/signup  (cuenta gratis / free account)
 echo   2) https://dashboard.ngrok.com/get-started/your-authtoken  (copia tu authtoken / copy your authtoken)
-echo   3) https://dashboard.ngrok.com/domains  (crea tu dominio gratis / claim your free domain)
+echo   3) https://dashboard.ngrok.com/domains  (copia tu dev domain ya asignado / copy your pre-assigned dev domain)
 echo.
 set /p NGROK_AUTHTOKEN=ngrok authtoken:
-set /p NGROK_DOMAIN=ngrok domain (ej/e.g. algo.ngrok-free.app):
+set /p NGROK_DOMAIN=ngrok domain (ej/e.g. algo.ngrok-free.dev):
 (
     echo NGROK_AUTHTOKEN=%NGROK_AUTHTOKEN%
     echo NGROK_DOMAIN=%NGROK_DOMAIN%
