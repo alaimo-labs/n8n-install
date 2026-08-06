@@ -58,7 +58,7 @@ echo.
 REM Recreate both containers on every start: workflows live in the n8n_data
 REM volume, so this is safe, and it picks up config changes automatically.
 docker rm -f n8n >nul 2>&1
-docker run -d --name n8n --network n8n-net -p 5678:5678 -v n8n_data:/home/node/.n8n -e WEBHOOK_URL=https://%NGROK_DOMAIN%/ docker.n8n.io/n8nio/n8n
+docker run -d --name n8n --network n8n-net -p 5678:5678 -v n8n_data:/home/node/.n8n -e WEBHOOK_URL=https://%NGROK_DOMAIN%/ -e N8N_PROXY_HOPS=1 docker.n8n.io/n8nio/n8n
 
 docker rm -f n8n-ngrok >nul 2>&1
 docker run -d --name n8n-ngrok --network n8n-net -e NGROK_AUTHTOKEN=%NGROK_AUTHTOKEN% ngrok/ngrok:latest http --url=https://%NGROK_DOMAIN% n8n:5678

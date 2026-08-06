@@ -54,6 +54,7 @@ docker rm -f n8n >/dev/null 2>&1
 docker run -d --name n8n --network n8n-net -p 5678:5678 \
     -v n8n_data:/home/node/.n8n \
     -e WEBHOOK_URL="https://$NGROK_DOMAIN/" \
+    -e N8N_PROXY_HOPS=1 \
     docker.n8n.io/n8nio/n8n
 
 docker rm -f n8n-ngrok >/dev/null 2>&1
