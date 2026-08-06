@@ -3,12 +3,23 @@ setlocal
 title n8n
 set "CONFIG=%~dp0n8n-config.txt"
 
+REM Check that the docker command exists (needs a reboot after installing Docker Desktop)
+where docker >nul 2>&1
+if errorlevel 1 (
+    echo.
+    echo [ES] Windows todavia no reconoce Docker. Si acabas de instalar Docker Desktop, reinicia la computadora una vez y vuelve a hacer doble clic en este archivo. Si aun no lo instalaste: https://www.docker.com/products/docker-desktop/
+    echo [EN] Windows does not recognize Docker yet. If you just installed Docker Desktop, reboot the computer once and double-click this file again. If you have not installed it yet: https://www.docker.com/products/docker-desktop/
+    echo.
+    pause
+    exit /b 1
+)
+
 REM Check that Docker Desktop is running
 docker info >nul 2>&1
 if errorlevel 1 (
     echo.
-    echo [ES] Docker Desktop no esta corriendo. Abre Docker Desktop, espera a que diga "Running" y vuelve a hacer doble clic en este archivo.
-    echo [EN] Docker Desktop is not running. Open Docker Desktop, wait until it says "Running", then double-click this file again.
+    echo [ES] Docker Desktop no esta corriendo. Abre Docker Desktop, espera a que diga "Engine running" ^(abajo a la izquierda^) y vuelve a hacer doble clic en este archivo. Si ya dice "Engine running" y este mensaje sigue apareciendo, reinicia la computadora una vez.
+    echo [EN] Docker Desktop is not running. Open Docker Desktop, wait until it says "Engine running" ^(bottom left^), then double-click this file again. If it already says "Engine running" and you still see this message, reboot the computer once.
     echo.
     pause
     exit /b 1

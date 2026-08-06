@@ -23,8 +23,8 @@ No necesitas cuenta de GitHub ni saber usar git: el link descarga todo directame
 **1. Docker Desktop**
 
 1. Descarga Docker Desktop desde <https://www.docker.com/products/docker-desktop/> y ejecuta el instalador (siguiente → siguiente → finalizar).
-2. **Windows**: si el instalador te pide habilitar WSL 2, acepta y reinicia la computadora una vez.
-3. Abre Docker Desktop y espera a que diga **Running**. No necesitas crear cuenta: si te pide iniciar sesión, puedes saltarlo.
+2. **Windows**: si el instalador te pide habilitar WSL 2, acepta. Al terminar la instalación, **reinicia la computadora una vez** (aunque no te lo pida — Windows lo necesita para reconocer Docker).
+3. Abre Docker Desktop y espera a que diga **Engine running** (abajo a la izquierda). No necesitas crear cuenta: si te pide iniciar sesión, puedes saltarlo.
 
 **2. Cuenta gratis de ngrok** (para que los webhooks funcionen desde internet)
 
@@ -63,7 +63,9 @@ Tres cosas importantes:
 
 | Síntoma | Solución |
 |---|---|
-| "Docker Desktop no está corriendo" | Abre Docker Desktop, espera al estado **Running** y vuelve a intentar. |
+| "Docker Desktop no está corriendo" | Abre Docker Desktop, espera al estado **Engine running** y vuelve a intentar. |
+| Docker Desktop dice "Engine running" pero el script dice que no está corriendo | Reinicia la computadora una vez (Windows lo necesita después de instalar Docker Desktop) y vuelve a intentar. |
+| No sé dónde hacer doble clic | El doble clic es en tu computadora, no en la página de GitHub: descarga el ZIP (link arriba), descomprímelo, abre la carpeta y entra a `windows` o `mac` según tu sistema. |
 | "El túnel no arrancó (authtoken o dominio incorrectos)" | Borra el archivo `n8n-config.txt` que está junto al script y vuelve a ejecutar `start-n8n` con los datos correctos. |
 | El navegador muestra error al abrir | Espera 30 segundos y recarga la página; la primera vez tarda más. |
 | n8n no carga después de reiniciar la compu | Doble clic en `start-n8n` otra vez. |
@@ -89,8 +91,8 @@ No GitHub account or git knowledge needed: the link downloads everything directl
 **1. Docker Desktop**
 
 1. Download Docker Desktop from <https://www.docker.com/products/docker-desktop/> and run the installer (next → next → finish).
-2. **Windows**: if the installer asks to enable WSL 2, accept and reboot once.
-3. Open Docker Desktop and wait until it says **Running**. No Docker account needed — if it asks you to sign in, skip it.
+2. **Windows**: if the installer asks to enable WSL 2, accept. When the installation finishes, **reboot the computer once** (even if it doesn't ask — Windows needs it to recognize Docker).
+3. Open Docker Desktop and wait until it says **Engine running** (bottom left). No Docker account needed — if it asks you to sign in, skip it.
 
 **2. Free ngrok account** (so webhooks work from the internet)
 
@@ -129,7 +131,9 @@ Three important notes:
 
 | Symptom | Fix |
 |---|---|
-| "Docker Desktop is not running" | Open Docker Desktop, wait for **Running**, try again. |
+| "Docker Desktop is not running" | Open Docker Desktop, wait for **Engine running**, try again. |
+| Docker Desktop says "Engine running" but the script says it isn't | Reboot the computer once (Windows needs it after installing Docker Desktop) and try again. |
+| Not sure where to double-click | The double-click happens on your computer, not on the GitHub page: download the ZIP (link above), unzip it, open the folder and go into `windows` or `mac` depending on your system. |
 | "The tunnel did not start (wrong authtoken or domain)" | Delete the `n8n-config.txt` file next to the script and run `start-n8n` again with the correct values. |
 | Browser shows an error on open | Wait 30 seconds and reload; the first run takes longer. |
 | n8n won't load after rebooting | Double-click `start-n8n` again. |

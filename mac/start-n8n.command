@@ -4,10 +4,19 @@
 DIR="$(cd "$(dirname "$0")" && pwd)"
 CONFIG="$DIR/n8n-config.txt"
 
+if ! command -v docker >/dev/null 2>&1; then
+    echo ""
+    echo "[ES] Tu Mac todavía no reconoce Docker. Si acabas de instalar Docker Desktop, ábrelo una vez desde Aplicaciones y espera a que diga \"Engine running\"; si sigue sin funcionar, reinicia la Mac. Si aún no lo instalaste: https://www.docker.com/products/docker-desktop/"
+    echo "[EN] Your Mac does not recognize Docker yet. If you just installed Docker Desktop, open it once from Applications and wait for \"Engine running\"; if it still fails, restart the Mac. If you have not installed it yet: https://www.docker.com/products/docker-desktop/"
+    echo ""
+    read -r -p "Press Enter to close..."
+    exit 1
+fi
+
 if ! docker info >/dev/null 2>&1; then
     echo ""
-    echo "[ES] Docker Desktop no está corriendo. Abre Docker Desktop, espera a que diga \"Running\" y vuelve a hacer doble clic en este archivo."
-    echo "[EN] Docker Desktop is not running. Open Docker Desktop, wait until it says \"Running\", then double-click this file again."
+    echo "[ES] Docker Desktop no está corriendo. Abre Docker Desktop, espera a que diga \"Engine running\" (abajo a la izquierda) y vuelve a hacer doble clic en este archivo."
+    echo "[EN] Docker Desktop is not running. Open Docker Desktop, wait until it says \"Engine running\" (bottom left), then double-click this file again."
     echo ""
     read -r -p "Press Enter to close..."
     exit 1
