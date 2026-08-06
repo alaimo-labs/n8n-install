@@ -23,7 +23,7 @@ No necesitas cuenta de GitHub ni saber usar git: el link descarga todo directame
 **1. Docker Desktop**
 
 1. Descarga Docker Desktop desde <https://www.docker.com/products/docker-desktop/> y ejecuta el instalador (siguiente → siguiente → finalizar).
-2. **Windows**: si el instalador te pide habilitar WSL 2, acepta. Al terminar la instalación, **reinicia la computadora una vez** (aunque no te lo pida — Windows lo necesita para reconocer Docker).
+2. **Windows**: si el instalador te pide habilitar WSL 2, acepta. Al terminar la instalación, **reinicia la computadora** (aunque no te lo pida — Windows lo necesita para reconocer Docker).
 3. Abre Docker Desktop y espera a que diga **Engine running** (abajo a la izquierda). No necesitas crear cuenta: si te pide iniciar sesión, puedes saltarlo.
 
 **2. Cuenta gratis de ngrok** (para que los webhooks funcionen desde internet)
@@ -61,18 +61,18 @@ Tres cosas importantes:
 
 ### Si algo no funciona
 
-| Síntoma | Solución |
-|---|---|
-| "Docker Desktop no está corriendo" | Abre Docker Desktop, espera al estado **Engine running** y vuelve a intentar. |
-| Docker Desktop dice "Engine running" pero el script dice que no está corriendo | Reinicia la computadora una vez (Windows lo necesita después de instalar Docker Desktop) y vuelve a intentar. |
-| No sé dónde hacer doble clic | El doble clic es en tu computadora, no en la página de GitHub: descarga el ZIP (link arriba), descomprímelo, abre la carpeta y entra a `windows` o `mac` según tu sistema. |
-| "El túnel no arrancó (authtoken o dominio incorrectos)" | Borra el archivo `n8n-config.txt` que está junto al script y vuelve a ejecutar `start-n8n` con los datos correctos. |
-| El navegador muestra error al abrir | Espera 30 segundos y recarga la página; la primera vez tarda más. |
-| n8n no carga después de reiniciar la compu | Doble clic en `start-n8n` otra vez. |
-| Un webhook no responde desde afuera | Verifica que la compu esté encendida, n8n corriendo, y que la URL empiece con `https://tu-dominio.ngrok-free.dev`. Si lo llamas desde código frontend, agrega el header `ngrok-skip-browser-warning`. |
-| Al ejecutar un workflow con formulario, el formulario no se abre | Usa el editor desde `https://tu-dominio.ngrok-free.dev` (no desde `localhost`). Si la pestaña quedó abierta de antes de un reinicio, recárgala con Cmd+Shift+R (Mac) o Ctrl+Shift+R (Windows). |
-| El formulario dice "isn't listening yet" o "Problem submitting response" | El modo de prueba expira a los ~2 minutos: vuelve a hacer clic en "Ejecutar workflow" y envía el formulario enseguida. Para una URL permanente, publica el workflow (**Publish**) y usa la URL de producción (`/form/...`). |
-| Error `X-Forwarded-For` / `trust proxy` en los logs | Tu script es de una versión vieja: descarga la versión actual de `start-n8n` y ejecútala de nuevo. |
+| Síntoma                                                                        | Solución                                                                                                                                                                                                                    |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "Docker Desktop no está corriendo"                                             | Abre Docker Desktop, espera al estado **Engine running** y vuelve a intentar.                                                                                                                                               |
+| Docker Desktop dice "Engine running" pero el script dice que no está corriendo | Reinicia la computadora (Windows lo necesita después de instalar Docker Desktop) y vuelve a intentar.                                                                                                                       |
+| No sé dónde hacer doble clic                                                   | El doble clic es en tu computadora, no en la página de GitHub: descarga el ZIP (link arriba), descomprímelo, abre la carpeta y entra a `windows` o `mac` según tu sistema.                                                  |
+| "El túnel no arrancó (authtoken o dominio incorrectos)"                        | Borra el archivo `n8n-config.txt` que está junto al script y vuelve a ejecutar `start-n8n` con los datos correctos.                                                                                                         |
+| El navegador muestra error al abrir                                            | Espera 30 segundos y recarga la página; la primera vez tarda más.                                                                                                                                                           |
+| n8n no carga después de reiniciar la compu                                     | Doble clic en `start-n8n` otra vez.                                                                                                                                                                                         |
+| Un webhook no responde desde afuera                                            | Verifica que la compu esté encendida, n8n corriendo, y que la URL empiece con `https://tu-dominio.ngrok-free.dev`. Si lo llamas desde código frontend, agrega el header `ngrok-skip-browser-warning`.                       |
+| Al ejecutar un workflow con formulario, el formulario no se abre               | Usa el editor desde `https://tu-dominio.ngrok-free.dev` (no desde `localhost`). Si la pestaña quedó abierta de antes de un reinicio, recárgala con Cmd+Shift+R (Mac) o Ctrl+Shift+R (Windows).                              |
+| El formulario dice "isn't listening yet" o "Problem submitting response"       | El modo de prueba expira a los ~2 minutos: vuelve a hacer clic en "Ejecutar workflow" y envía el formulario enseguida. Para una URL permanente, publica el workflow (**Publish**) y usa la URL de producción (`/form/...`). |
+| Error `X-Forwarded-For` / `trust proxy` en los logs                            | Tu script es de una versión vieja: descarga la versión actual de `start-n8n` y ejecútala de nuevo.                                                                                                                          |
 
 ---
 
@@ -91,7 +91,7 @@ No GitHub account or git knowledge needed: the link downloads everything directl
 **1. Docker Desktop**
 
 1. Download Docker Desktop from <https://www.docker.com/products/docker-desktop/> and run the installer (next → next → finish).
-2. **Windows**: if the installer asks to enable WSL 2, accept. When the installation finishes, **reboot the computer once** (even if it doesn't ask — Windows needs it to recognize Docker).
+2. **Windows**: if the installer asks to enable WSL 2, accept. When the installation finishes, **reboot the computer** (even if it doesn't ask — Windows needs it to recognize Docker).
 3. Open Docker Desktop and wait until it says **Engine running** (bottom left). No Docker account needed — if it asks you to sign in, skip it.
 
 **2. Free ngrok account** (so webhooks work from the internet)
@@ -129,15 +129,15 @@ Three important notes:
 
 ### Troubleshooting
 
-| Symptom | Fix |
-|---|---|
-| "Docker Desktop is not running" | Open Docker Desktop, wait for **Engine running**, try again. |
-| Docker Desktop says "Engine running" but the script says it isn't | Reboot the computer once (Windows needs it after installing Docker Desktop) and try again. |
-| Not sure where to double-click | The double-click happens on your computer, not on the GitHub page: download the ZIP (link above), unzip it, open the folder and go into `windows` or `mac` depending on your system. |
-| "The tunnel did not start (wrong authtoken or domain)" | Delete the `n8n-config.txt` file next to the script and run `start-n8n` again with the correct values. |
-| Browser shows an error on open | Wait 30 seconds and reload; the first run takes longer. |
-| n8n won't load after rebooting | Double-click `start-n8n` again. |
-| A webhook doesn't respond from outside | Check the computer is on, n8n is running, and the URL starts with `https://your-domain.ngrok-free.dev`. If calling from frontend code, add the `ngrok-skip-browser-warning` header. |
-| Executing a workflow with a form doesn't open the form | Use the editor at `https://your-domain.ngrok-free.dev` (not `localhost`). If the tab was open from before a restart, reload it with Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows). |
+| Symptom                                                              | Fix                                                                                                                                                                                                  |
+| -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| "Docker Desktop is not running"                                      | Open Docker Desktop, wait for **Engine running**, try again.                                                                                                                                         |
+| Docker Desktop says "Engine running" but the script says it isn't    | Reboot the computer (Windows needs it after installing Docker Desktop) and try again.                                                                                                                |
+| Not sure where to double-click                                       | The double-click happens on your computer, not on the GitHub page: download the ZIP (link above), unzip it, open the folder and go into `windows` or `mac` depending on your system.                 |
+| "The tunnel did not start (wrong authtoken or domain)"               | Delete the `n8n-config.txt` file next to the script and run `start-n8n` again with the correct values.                                                                                               |
+| Browser shows an error on open                                       | Wait 30 seconds and reload; the first run takes longer.                                                                                                                                              |
+| n8n won't load after rebooting                                       | Double-click `start-n8n` again.                                                                                                                                                                      |
+| A webhook doesn't respond from outside                               | Check the computer is on, n8n is running, and the URL starts with `https://your-domain.ngrok-free.dev`. If calling from frontend code, add the `ngrok-skip-browser-warning` header.                  |
+| Executing a workflow with a form doesn't open the form               | Use the editor at `https://your-domain.ngrok-free.dev` (not `localhost`). If the tab was open from before a restart, reload it with Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows).                     |
 | The form says "isn't listening yet" or "Problem submitting response" | Test mode expires after ~2 minutes: click "Execute workflow" again and submit the form right away. For a permanent URL, publish the workflow (**Publish**) and use the production URL (`/form/...`). |
-| `X-Forwarded-For` / `trust proxy` error in the logs | Your script is from an old version: download the current `start-n8n` and run it again. |
+| `X-Forwarded-For` / `trust proxy` error in the logs                  | Your script is from an old version: download the current `start-n8n` and run it again.                                                                                                               |
