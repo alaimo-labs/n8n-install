@@ -10,6 +10,14 @@ Scripts so anyone (no technical skills needed) can run n8n for free on their com
 
 ## Español
 
+### Cómo descargar
+
+1. Descarga todo desde este link: **<https://github.com/alaimo-labs/n8n-install/archive/refs/heads/main.zip>**
+2. Descomprime el archivo (doble clic en el ZIP descargado).
+3. Guarda la carpeta en un lugar fijo (por ejemplo, Documentos) — ahí van a quedar los scripts y tu configuración.
+
+No necesitas cuenta de GitHub ni saber usar git: el link descarga todo directamente.
+
 ### Requisitos (una sola vez)
 
 **1. Docker Desktop**
@@ -67,6 +75,14 @@ Tres cosas importantes:
 ---
 
 ## English
+
+### How to download
+
+1. Download everything from this link: **<https://github.com/alaimo-labs/n8n-install/archive/refs/heads/main.zip>**
+2. Unzip the file (double-click the downloaded ZIP).
+3. Keep the folder somewhere permanent (e.g. Documents) — that's where the scripts and your configuration will live.
+
+No GitHub account or git knowledge needed: the link downloads everything directly.
 
 ### Requirements (one time only)
 
