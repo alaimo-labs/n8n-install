@@ -32,7 +32,9 @@ Ten a mano el authtoken y el dominio: el script te los pedirá la primera vez y 
 - **Mac**: doble clic en `mac/start-n8n.command`.
   - La primera vez, macOS puede bloquearlo por ser un archivo descargado. Haz clic derecho sobre el archivo → **Abrir** → **Abrir** (solo hace falta una vez).
 
-La primera vez pide el authtoken y el dominio de ngrok, y descarga n8n (unos minutos). Al terminar, se abre el navegador en `http://localhost:5678`, donde creas tu usuario local y ya puedes armar workflows.
+La primera vez pide el authtoken y el dominio de ngrok, y descarga n8n (unos minutos). Al terminar, se abre el navegador en `https://tu-dominio.ngrok-free.dev`, donde creas tu usuario local y ya puedes armar workflows.
+
+> **Importante**: usa siempre el editor desde tu dominio de ngrok (no desde `localhost:5678`). Si usas `localhost`, los formularios (Form Trigger) no se abren al ejecutar el workflow, porque el navegador bloquea la comunicación entre los dos dominios (CORS). La primera vez que abras tu dominio, ngrok muestra una página de aviso: haz clic en **Visit Site** (solo una vez por navegador).
 
 ### Webhooks (por ejemplo, desde Lovable)
 
@@ -58,6 +60,9 @@ Tres cosas importantes:
 | El navegador muestra error al abrir | Espera 30 segundos y recarga la página; la primera vez tarda más. |
 | n8n no carga después de reiniciar la compu | Doble clic en `start-n8n` otra vez. |
 | Un webhook no responde desde afuera | Verifica que la compu esté encendida, n8n corriendo, y que la URL empiece con `https://tu-dominio.ngrok-free.dev`. Si lo llamas desde código frontend, agrega el header `ngrok-skip-browser-warning`. |
+| Al ejecutar un workflow con formulario, el formulario no se abre | Usa el editor desde `https://tu-dominio.ngrok-free.dev` (no desde `localhost`). Si la pestaña quedó abierta de antes de un reinicio, recárgala con Cmd+Shift+R (Mac) o Ctrl+Shift+R (Windows). |
+| El formulario dice "isn't listening yet" o "Problem submitting response" | El modo de prueba expira a los ~2 minutos: vuelve a hacer clic en "Ejecutar workflow" y envía el formulario enseguida. Para una URL permanente, publica el workflow (**Publish**) y usa la URL de producción (`/form/...`). |
+| Error `X-Forwarded-For` / `trust proxy` en los logs | Tu script es de una versión vieja: descarga la versión actual de `start-n8n` y ejecútala de nuevo. |
 
 ---
 
@@ -85,7 +90,9 @@ Keep the authtoken and domain handy: the script asks for them on first run and s
 - **Mac**: double-click `mac/start-n8n.command`.
   - The first time, macOS may block it as a downloaded file. Right-click the file → **Open** → **Open** (only needed once).
 
-The first run asks for your ngrok authtoken and domain, then downloads n8n (a few minutes). When it finishes, your browser opens at `http://localhost:5678`, where you create your local user and start building workflows.
+The first run asks for your ngrok authtoken and domain, then downloads n8n (a few minutes). When it finishes, your browser opens at `https://your-domain.ngrok-free.dev`, where you create your local user and start building workflows.
+
+> **Important**: always use the editor at your ngrok domain (not `localhost:5678`). On `localhost`, forms (Form Trigger) won't open when you execute the workflow, because the browser blocks communication between the two domains (CORS). The first time you open your domain, ngrok shows a warning page: click **Visit Site** (once per browser).
 
 ### Webhooks (e.g. from Lovable)
 
@@ -111,3 +118,6 @@ Three important notes:
 | Browser shows an error on open | Wait 30 seconds and reload; the first run takes longer. |
 | n8n won't load after rebooting | Double-click `start-n8n` again. |
 | A webhook doesn't respond from outside | Check the computer is on, n8n is running, and the URL starts with `https://your-domain.ngrok-free.dev`. If calling from frontend code, add the `ngrok-skip-browser-warning` header. |
+| Executing a workflow with a form doesn't open the form | Use the editor at `https://your-domain.ngrok-free.dev` (not `localhost`). If the tab was open from before a restart, reload it with Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows). |
+| The form says "isn't listening yet" or "Problem submitting response" | Test mode expires after ~2 minutes: click "Execute workflow" again and submit the form right away. For a permanent URL, publish the workflow (**Publish**) and use the production URL (`/form/...`). |
+| `X-Forwarded-For` / `trust proxy` error in the logs | Your script is from an old version: download the current `start-n8n` and run it again. |

@@ -55,6 +55,7 @@ docker run -d --name n8n --network n8n-net -p 5678:5678 \
     -v n8n_data:/home/node/.n8n \
     -e WEBHOOK_URL="https://$NGROK_DOMAIN/" \
     -e N8N_PROXY_HOPS=1 \
+    -e N8N_DIAGNOSTICS_ENABLED=false \
     docker.n8n.io/n8nio/n8n
 
 docker rm -f n8n-ngrok >/dev/null 2>&1
@@ -86,6 +87,6 @@ if [ -z "$(docker ps -q -f name=n8n-ngrok -f status=running)" ]; then
 fi
 
 echo ""
-echo "[ES] Listo. Editor: http://localhost:5678 — Webhooks públicos: https://$NGROK_DOMAIN"
-echo "[EN] Done. Editor: http://localhost:5678 — Public webhooks: https://$NGROK_DOMAIN"
-open http://localhost:5678
+echo "[ES] Listo. Editor: https://$NGROK_DOMAIN — usa siempre esta URL (los formularios no funcionan bien desde localhost)."
+echo "[EN] Done. Editor: https://$NGROK_DOMAIN — always use this URL (forms don't work well from localhost)."
+open "https://$NGROK_DOMAIN"
