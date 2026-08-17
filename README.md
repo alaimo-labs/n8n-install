@@ -1,10 +1,33 @@
-# n8n local, gratis y con webhooks / n8n locally, free, with webhooks
+# n8n Local, gratis y con webhooks / n8n locally, free, with webhooks
 
-Scripts para que cualquier persona (sin conocimientos técnicos) corra n8n gratis en su computadora, con webhooks accesibles desde internet (Lovable, formularios, APIs, etc.).
+Este repositorio contiene scripts para instalar y ejecutar **n8n Local gratuitamente en tu computadora**, incluyendo acceso a webhooks desde internet mediante ngrok.
 
-Scripts so anyone (no technical skills needed) can run n8n for free on their computer, with webhooks reachable from the internet (Lovable, forms, APIs, etc.).
+Esta opción está pensada como una **alternativa gratuita a n8n Cloud para personas con background técnico** que se sientan cómodas instalando software y resolviendo eventuales inconvenientes de configuración en su propio equipo.
 
-> Nota / Note: n8n discontinuó su servicio de túnel propio (`--tunnel`) en 2026, por eso estos scripts usan **ngrok** (gratis) para exponer los webhooks. / n8n discontinued its own tunnel service (`--tunnel`) in 2026, which is why these scripts use **ngrok** (free) to expose webhooks.
+Los scripts simplifican considerablemente el proceso estándar de instalación, pero n8n Local depende de componentes como Docker, la configuración del sistema operativo, virtualización, permisos y características particulares de cada computadora.
+
+> **Importante:** Alaimo Labs proporciona estos scripts y este tutorial como un recurso opcional para facilitar la instalación de n8n Local. Debido a las diferencias entre equipos y configuraciones, **no nos es posible brindar soporte técnico individual para resolver problemas relacionados con Docker, virtualización, sistema operativo, redes u otros componentes del entorno local**.
+>
+> Si no tienes background técnico o prefieres evitar este tipo de configuración y troubleshooting, **recomendamos utilizar n8n Cloud**.
+
+> **Nota:** n8n discontinuó su servicio de túnel propio (`--tunnel`) en 2026, por eso estos scripts utilizan ngrok para exponer los webhooks.
+
+---
+
+## English
+
+This repository contains scripts to install and run **n8n locally on your computer for free**, including internet-accessible webhooks through ngrok.
+
+This setup is intended as a **free alternative to n8n Cloud for users with a technical background** who are comfortable installing software and troubleshooting potential configuration issues on their own computer.
+
+The scripts considerably simplify the standard installation process, but running n8n locally depends on components such as Docker, operating system configuration, virtualization, permissions, and other machine-specific settings.
+
+> **Important:** Alaimo Labs provides these scripts and this tutorial as an optional resource to make the local installation of n8n easier. Because every computer and environment can be configured differently, **we are unable to provide individual technical support for issues related to Docker, virtualization, operating systems, networking, or other local environment components**.
+>
+> If you don't have a technical background or would rather avoid installation and troubleshooting, **we recommend using n8n Cloud**.
+
+> **Note:** n8n discontinued its built-in tunnel service (`--tunnel`) in 2026, which is why these scripts use ngrok to expose webhooks.
+
 
 ---
 
